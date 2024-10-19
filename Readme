@@ -59,3 +59,34 @@ Future Enhancements
 User Notifications: Notify participants when a new expense is added.
 Automated Settlements: Suggest settlement amounts between users based on the overall balance sheet.
 Analytics Dashboard: Provide insights into spending patterns.
+
+Steps to Run the Project
+Prerequisites
+Node.js: Ensure you have Node.js installed (version 14 or higher). You can download it from nodejs.org.
+MongoDB: Make sure you have MongoDB installed and running. You can either install it locally or use a cloud service like MongoDB Atlas.
+Postman (optional): To test the API endpoints, you can use Postman or any other API testing tool.
+Step 1: Clone the Repository
+Step 2: Navigate to the Project Directory
+Change into the project directory: daily-expenses-sharing-app
+Step 3: Install Dependencies
+Install the necessary dependencies for the backend:
+Step 4: Set Up Environment Variables
+Create a .env file in the root directory of your project and add the following environment variables:
+makefile
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/expensesDB
+JWT_SECRET=your_jwt_secret
+MONGODB_URI: Update this if you are using a cloud MongoDB service.
+JWT_SECRET: Set a secret key for JWT authentication.
+Step 5: Run the Application
+Start the application using the following command:
+The server should now be running on http://localhost:5000.
+Step 6: Test the API Endpoints
+You can use Postman or another API testing tool to test the API endpoints. Here are some endpoints to start with:
+User Registration: POST /api/users/register
+User Login: POST /api/users/login
+Add Expense: POST /api/expenses
+Retrieve Individual User Expenses: GET /api/expenses/user/:userId
+Download Balance Sheet: GET /api/expenses/download
+
+THANK YOU SO MUCH ! LOOKING FORWARD FOR FEEDBACKS !
