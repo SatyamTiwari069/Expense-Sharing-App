@@ -1,0 +1,61 @@
+Daily Expenses Sharing Application
+This Daily Expenses Sharing Application is designed to manage shared expenses among users. It allows users to split expenses in different ways and track their individual contributions over time. It also provides a balance sheet feature for users to view and download their expense summaries.
+
+Features
+1. User Management
+Registration: Users can create an account by providing their name, email, mobile number, and password.
+Login: Users can log in to the system using their email and password, with authentication powered by JSON Web Tokens (JWT).
+2. Expense Management
+Add Expenses: Users can add expenses and split them among participants.
+Equal Split: The expense is divided equally among all participants.
+Exact Split: Specify the exact amount each participant owes.
+Percentage Split: Specify the percentage each participant owes (total must sum up to 100%).
+3. Balance Sheet
+View and Download: Users can view their individual expenses, overall expenses, and download balance sheets.
+4. Authentication and Authorization
+JWT-based authentication to ensure that only registered users can access their data.
+5. Data Validation and Error Handling
+Input validation ensures data integrity (e.g., percentages must add up to 100% for the percentage-based split).
+Comprehensive error handling provides useful messages in case of issues.
+6. Performance Optimization
+Efficient handling of large datasets using pagination and database indexing.
+7. Testing
+Unit and integration tests using Jest and Supertest to ensure application reliability.
+Technologies Used
+Node.js: Backend server
+Express.js: Web framework
+MongoDB: Database for storing user and expense data
+Mongoose: ODM for MongoDB
+JWT (JSON Web Tokens): User authentication and authorization
+Express Validator: Input validation
+Jest: Testing framework
+Supertest: HTTP assertion library for testing APIs
+bcryptjs: For password hashing and security
+API Endpoints
+User Endpoints
+POST /api/users/register: Register a new user
+POST /api/users/login: Login an existing user
+GET /api/users/:id: Get user details (Protected route)
+Expense Endpoints
+POST /api/expenses: Add a new expense (Protected route)
+GET /api/expenses/user/:userId: Get individual user's expenses (Protected route)
+GET /api/expenses/overall: Get overall expenses for all users (Protected route)
+GET /api/expenses/download: Download the balance sheet (Protected route)
+Usage
+The Daily Expenses Sharing Application is useful for managing and tracking shared expenses among groups of people. Whether you go on trips with friends, share rent, or split bills after social gatherings, this app makes it easy to ensure everyone pays their fair share.
+
+Example Use Case
+A user can register and log in to the system.
+The user can then add an expense and choose how it will be split among participants: equally, by specific amounts, or by percentages.
+After the expense is added, users can view and download balance sheets to see who owes what.
+Main Features Highlight
+User Authentication and Authorization: Ensures secure access to personal data.
+Multiple Expense Splitting Methods: Supports equal, exact, and percentage-based expense splitting.
+Balance Sheet Management: Users can view and download a balance sheet of their expenses.
+Error Handling and Validation: Ensures data integrity and provides clear error messages.
+Optimized for Large Datasets: Paginated results and indexed database fields for better performance.
+Unit and Integration Testing: Tests ensure the reliability and correctness of the application.
+Future Enhancements
+User Notifications: Notify participants when a new expense is added.
+Automated Settlements: Suggest settlement amounts between users based on the overall balance sheet.
+Analytics Dashboard: Provide insights into spending patterns.
